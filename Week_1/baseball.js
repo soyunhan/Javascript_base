@@ -1,8 +1,9 @@
+
+
 const prompt = require('prompt-sync')();
 
 // 결과값 받기
 let result = randomN();
-console.log(typeof result)
 
 //3자리 랜덤숫자 생성해서 결합
 function randomN(){
@@ -41,7 +42,7 @@ while(trys >= 0){
         console.log(`완료! ${trys}번 시도 게임 종료!`);
         break;
     } else {
-        console.log(`땡! ${answer.strike}스트라이크, ${answer.ball}볼`);
+        console.log(`${answer.strike}S${answer.ball}B`);
     }
 }
 
