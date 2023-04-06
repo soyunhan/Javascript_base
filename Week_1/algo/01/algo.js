@@ -34,7 +34,8 @@
 // console.log(result);
 
 /* 빠른 A+B */
-// let testCase = Number(input[0]); let answer = '';
+// let testCase = Number(input[0]);
+// let answer = '';
 // for (let t = 1; t <= testCase; t++) {
 //   let data = input[t].split(' ');
 //   let a = Number(data[0]);
