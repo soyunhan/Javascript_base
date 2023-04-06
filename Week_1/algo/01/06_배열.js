@@ -1,7 +1,6 @@
 let fs = require('fs');
 let input = fs.readFileSync('../input.txt').toString().split('\n');
 
-
 // let n = Number(input[0]);
 // let arr = input[1].split(' ').map(Number);
 // /*
@@ -22,3 +21,9 @@ let input = fs.readFileSync('../input.txt').toString().split('\n');
 // let minValue = data.reduce((a, b) => Math.min(a, b));
 // let maxValue = data.reduce((a, b) => Math.max(a, b));
 // console.log(minValue + " " + maxValue);
+
+// 최댓값
+let data = input.map(x => Number(x));
+let max = Math.max(...data)
+console.log(max)
+console.log(input.indexOf(max) + 1)
