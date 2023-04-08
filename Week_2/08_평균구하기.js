@@ -12,3 +12,6 @@ function solution(arr) {
 }
 
 console.log(solution([1,2,3,4]));
+
+//const result = arr.reduce((sum, currValue) => sum + currValue, 0);
+//arr.forEach(num => {answer += num;});

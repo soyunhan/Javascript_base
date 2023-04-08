@@ -10,3 +10,10 @@ function solution(phone_number) {
 }
 
 console.log(solution('01033334444'))
+
+
+
+// let answer = '';
+// let len = phone_number.length;
+// console.log(len) // 넘버에 길이
+// answer = "*".repeat(len - 4) + phone_number.slice(len - 4, len)
