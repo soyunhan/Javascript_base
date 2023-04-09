@@ -41,16 +41,24 @@
 
 
 //map 예제2  활용해 배열 속 객체를 재구성
-let arr1 = [
-    {key:1 , value: 10},
-    {key:2 , value: 20},
-    {key:3 , value: 30},
-]
+// let arr1 = [
+//     {key:1 , value: 10},
+//     {key:2 , value: 20},
+//     {key:3 , value: 30},
+// ]
 
-let reformatArr = arr1.map(function(obj){
-    var robj ={};
-    robj[obj.key] = obj.value
-    return robj
+// let reformatArr = arr1.map(function(obj){
+//     var robj ={};
+//     robj[obj.key] = obj.value
+//     return robj
+// })
+
+// console.log(arr1);
+
+//map 예제3 인자로 사용하여 배열 재구성
+let arr = [1,2,3,4]
+let result = arr.map(function(num){
+    return num * 2
 })
 
-console.log(arr1);
+console.log(arr)
