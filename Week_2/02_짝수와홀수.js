@@ -22,6 +22,13 @@
 // console.log(solution(2));
 
 //filter예제
-const arr1 = ['박수호', '건담', '레고', '헬로카봇']
-const result = arr1.filter( arr1 => arr1.length > 2);
-console.log(result)
+// const arr1 = ['박수호', '건담', '레고', '헬로카봇']
+// const result = arr1.filter( arr1 => arr1.length > 2);
+// console.log(result)
+
+//filter예제2
+function isBigEnought(value){
+    return value >= 20
+}
+var fillered = [12 ,5 ,39 ,29 ,18 ,5 ,3].filter(isBigEnought);
+console.log(fillered);
