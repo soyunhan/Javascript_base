@@ -27,8 +27,15 @@
 // console.log(result)
 
 //filter예제2
-function isBigEnought(value){
-    return value >= 20
-}
-var fillered = [12 ,5 ,39 ,29 ,18 ,5 ,3].filter(isBigEnought);
-console.log(fillered);
+// function isBigEnought(value){
+//     return value >= 20
+// }
+// var fillered = [12 ,5 ,39 ,29 ,18 ,5 ,3].filter(isBigEnought);
+// console.log(fillered);
+
+
+//map 예제1
+const arr1 = [1 , 4, 9 ,16]
+const map1 = arr1.map(x => x * 2)
+console.log(map1);
+
