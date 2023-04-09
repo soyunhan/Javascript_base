@@ -35,7 +35,22 @@
 
 
 //map 예제1
-const arr1 = [1 , 4, 9 ,16]
-const map1 = arr1.map(x => x * 2)
-console.log(map1);
+// const arr1 = [1 , 4, 9 ,16]
+// const map1 = arr1.map(x => x * 2)
+// console.log(map1);
 
+
+//map 예제2  활용해 배열 속 객체를 재구성
+let arr1 = [
+    {key:1 , value: 10},
+    {key:2 , value: 20},
+    {key:3 , value: 30},
+]
+
+let reformatArr = arr1.map(function(obj){
+    var robj ={};
+    robj[obj.key] = obj.value
+    return robj
+})
+
+console.log(arr1);
