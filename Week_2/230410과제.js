@@ -8,68 +8,77 @@
 // 3. 유니크한 옷은 기록된 순서로 추출되고 출력됩니다.
 // ex) 출력은 [3,1,4,2]입니다.
 
-    // 식별자고정
-    // function addArray(...arrays) {
-    //     answer = arrays.reduce((result, currentArray) => { return [...result, ...currentArray]}, []);
-    //     // Set 객체는 자료형에 관계 없이 원시 값과 객체 참조 모두 유일한 값을 저장
-    //     return [...new Set(answer)]
-    // }
+// 식별자고정
+// function addArray(...arrays) {
+//     answer = arrays.reduce((result, currentArray) => { return [...result, ...currentArray]}, []);
+//     // Set 객체는 자료형에 관계 없이 원시 값과 객체 참조 모두 유일한 값을 저장
+//     return [...new Set(answer)]
+// }
 
-    // const arr1 = [3,1];
-    // const arr2 = [4];
-    // const arr3 = [2,1,3];
-    // const arr4 = [2,1,3,4];
+// const arr1 = [3,1];
+// const arr2 = [4];
+// const arr3 = [2,1,3];
+// const arr4 = [2,1,3,4];
 
-    // const result = addArray(arr1, arr2, arr3, arr4);
-
-
-
-    //식별자고정 수정
-    function addArray(result) {
-        const regex = /\d+번: (\d+(,\d+)*)/g;
-        const clothList = result.match(regex).flatMap((str) => str.match(/\d+/g).slice(1))
-        answer = clothList.reduce((result, currentArray) => { return [...result, ...currentArray]}, []);
-        // Set 객체는 자료형에 관계 없이 원시 값과 객체 참조 모두 유일한 값을 저장
-        return [...new Set(clothList)]
-    }
+// const result = addArray(arr1, arr2, arr3, arr4);
 
 
-    // function addArray(data){
-    //     const str = data.split(/[0-9]번: /).slice(1)
-    //       .reduce((str, item) => {
-    //         const List = item.trim().split(',').map(Number);
-    //         return new Set([...str, ...List]);
-    //       }, new Set());
-      
-    //     return [...str];
-    //   }
-    // const result = addArray("1번: 4,2,3 2번: 3 3번: 2,3,4,1 4번: 2,3");
-    // console.log(result)
+
+//식별자고정 수정
+// function addArray(result) {
+//     const regex = /\d+번: (\d+(,\d+)*)/g;
+//     const clothList = result.match(regex).flatMap((str) => str.match(/\d+/g).slice(1))
+//     answer = clothList.reduce((result, currentArray) => { return [...result, ...currentArray] }, []);
+//     // Set 객체는 자료형에 관계 없이 원시 값과 객체 참조 모두 유일한 값을 저장
+//     return [...new Set(clothList)]
+// }
 
 
-    // function addArray(data){
-    //     // 우선, 정규식 /d+번: (\d+(,\d+)*)/g을 사용하여 각각의 옷 종류 목록을 추출합니다.
-    //     // 이 정규식은 숫자+번: 숫자+쉼표+숫자+0개 이상 반복 패턴에 매치됩니다.
-    //     const regex = /\d+번: (\d+(,\d+)*)/g;
-    //     // match() 함수를 사용하여 정규식에 매치되는 모든 문자열을 배열로 만듭니다. 
-    //     const clothList = data.match(regex)
-    //     // flatMap() 함수를 사용하여 각각의 옷 종류 목록에서 쉼표로 분리된 숫자들을 추출
-    //     .flatMap((str) => str.match(/\d+/g).slice(1))
-    //     .map(Number);
-    //     return [...new Set(clothList)];
-    //   }
-    const result = addArray("1번: 4,2,3 2번: 3 3번: 2,3,4,1 4번: 2,3");
-    console.log(Numberresult)
+// function addArray(data){
+//     const str = data.split(/[0-9]번: /).slice(1)
+//       .reduce((str, item) => {
+//         const List = item.trim().split(',').map(Number);
+//         return new Set([...str, ...List]);
+//       }, new Set());
+
+//     return [...str];
+//   }
+// const result = addArray("1번: 4,2,3 2번: 3 3번: 2,3,4,1 4번: 2,3");
+// console.log(result)
 
 
-    // flatMap예시
-    // let arr1 = [1, 2, 3, 4];
-    // arr1.map(x => [x * 2]);
-    // // [[2], [4], [6], [8]]
+function addArray(data) {
+    // 우선, 정규식 /d+번: (\d+(,\d+)*)/g을 사용하여 각각의 옷 종류 목록을 추출합니다.
+    // 이 정규식은 숫자+번: 숫자+쉼표+숫자+0개 이상 반복 패턴에 매치됩니다.
+    const regex = /\d+번: (\d+(,\d+)*)/g;
+    // match() 함수를 사용하여 정규식에 매치되는 모든 문자열을 배열로 만듭니다. 
+    const clothList = data.match(regex)
+        // flatMap() 함수를 사용하여 각각의 옷 종류 목록에서 쉼표로 분리된 숫자들을 추출
+        .flatMap((str) => str.match(/\d+/g).slice(1))
+        .map(Number);
+    return [...new Set(clothList)];
+}
+const result = addArray("1번: 4,2,3 2번: 3 3번: 2,3,4,1 4번: 2,3");
+console.log(result)
 
-    // arr1.flatMap(x => [x * 2]);
-    // // [2, 4, 6, 8]
 
-    // // 한 레벨만 평탄화됨
-    // arr1.flatMap(x => [[x * 2]]);
-    // // [[2], [4], [6], [8]]
+// flatMap예시
+// let arr1 = [1, 2, 3, 4];
+// arr1.map(x => [x * 2]);
+// // [[2], [4], [6], [8]]
+
+// arr1.flatMap(x => [x * 2]);
+// // [2, 4, 6, 8]
+
+// // 한 레벨만 평탄화됨
+// arr1.flatMap(x => [[x * 2]]);
+// // [[2], [4], [6], [8]]
+
+
+// match함수의 예제
+// const str = 'Hello, World! This is a test string.';
+// const regex = /is/g;
+
+// const result = str.match(regex);
+
+// console.log(result); // ["is", "is"]
