@@ -21,7 +21,7 @@ function solution(price, money, count) {
         sum += price * i
     }
     answer = money - sum
-    return (answer < 0 ? answer *= -1 : 0);
+    return (answer < 0 ? answer : 0);
 }
 
 console.log(solution(3, 20, 4))
