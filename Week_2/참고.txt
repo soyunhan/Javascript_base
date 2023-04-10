@@ -1,0 +1,12 @@
+20)길이가 다른 배열을 비교하려면
+JSON.stringify를 통해 문자열로 변경해 준 뒤 비교하는 방법이 있다.
+
+*교집합(Intersection)
+let intersection = arr1.filter(x => arr2.includes(x))
+
+*차집합(difference)
+let difference = arr1.filter(x => !arr2.includes(x))
+
+*대칭차집합(Symmetric difference)
+let difference = arr1.filter(x => !arr2.includes(x))
+                     .concat(arr2.filter(x => !arr1.includes(x)));                   
