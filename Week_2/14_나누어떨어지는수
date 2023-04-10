@@ -11,5 +11,4 @@ function solution(arr, divisor) {
 }
 
 
-
 console.log(solution([5, 9, 7, 10], 5));
