@@ -17,11 +17,13 @@
 // 참가자 중에는 동명이인이 있을 수 있습니다.
 
 
-function solution(participant, completion) {
+function solution(...array) {
     var answer = '';
-    for(let i =0; i < participant.length; i++){
+    // // *대칭차집합(Symmetric difference)
+    // answer = participant.filter(x => !completion.includes(x)).concat(completion.filter(x => !participant.includes(x))); 
         
-    }
+    let result2 = array.filter((v, i) => array.indexOf(v) === i);
+    console.log(result2);	// ['C', 'A', 'B', 'D', 'E']  
     return answer;
 }
 

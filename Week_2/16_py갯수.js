@@ -17,9 +17,10 @@ function solution(s) {
 
  for(let i= 0; i < s.length; i++){
      //s를 순회하며 p와 y의 갯수를 구하기(toLowerCase로 소문자 통일)
-  if (s[i].toLowerCase() === "p") {
+     let arr = s[i].toLowerCase() 
+  if (arr === "p") {
     pNum++;
-  } else if (s[i].toLowerCase() === "y") {
+  } else if (arr === "y") {
     yNum++;
   }
  }

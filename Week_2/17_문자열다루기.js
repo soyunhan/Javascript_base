@@ -14,11 +14,18 @@ function solution(s) {
     }
     
     // 문자열이 숫자로만 이루어져 있지 않으면 false 반환
+    //정규식
+    //0에서 9사이의 숫자가 아닌 모든 문자와 매치
     if (/[^0-9]/.test(s)) {
       return false;
     }
 
-    // parseInt() 함수는 문자열을 정수로 변환하는 JavaScript 내장 함수입니다. 
+    // parseInt() 함수는 문자열을 정수로 변환하는 내장 함수입니다. 
     const num1 = parseInt(s);
-    return !isNaN(num1);
+    //isNaN() - 매개변수가 숫자인지 검사하는 함수
+    answer = isNaN(num1)
+    return answer;
   }
+
+
+  console.log(solution("2234"))
