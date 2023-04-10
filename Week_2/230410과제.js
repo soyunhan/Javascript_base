@@ -60,3 +60,16 @@
     //   }
     const result = addArray("1번: 4,2,3 2번: 3 3번: 2,3,4,1 4번: 2,3");
     console.log(Numberresult)
+
+
+    // flatMap예시
+    // let arr1 = [1, 2, 3, 4];
+    // arr1.map(x => [x * 2]);
+    // // [[2], [4], [6], [8]]
+
+    // arr1.flatMap(x => [x * 2]);
+    // // [2, 4, 6, 8]
+
+    // // 한 레벨만 평탄화됨
+    // arr1.flatMap(x => [[x * 2]]);
+    // // [[2], [4], [6], [8]]
