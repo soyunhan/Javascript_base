@@ -18,7 +18,6 @@
 
 
 //동명이인
-
 // function solution(...array) {
 //     answer = array.reduce((result, currentArray) => { return [...result, ...currentArray]}, []);
 //     let difference = array[0].filter(x => !array[1].includes(x))
