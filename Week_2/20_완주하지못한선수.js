@@ -17,14 +17,75 @@
 // 참가자 중에는 동명이인이 있을 수 있습니다.
 
 
-function solution(...array) {
-    var answer = '';
-    // // *대칭차집합(Symmetric difference)
-    // answer = participant.filter(x => !completion.includes(x)).concat(completion.filter(x => !participant.includes(x))); 
-        
-    let result2 = array.filter((v, i) => array.indexOf(v) === i);
-    console.log(result2);	// ['C', 'A', 'B', 'D', 'E']  
-    return answer;
-}
+//동명이인
 
-console.log(solution(["leo", "kiki", "eden"], ["eden", "kiki"]))
+// function solution(...array) {
+//     answer = array.reduce((result, currentArray) => { return [...result, ...currentArray]}, []);
+//     let difference = array[0].filter(x => !array[1].includes(x))
+//     .concat(array[1].filter(x => !array[0].includes(x))).join('');
+    
+//     return difference;
+// }
+
+
+// function solution(participant, completion) {
+//     var answer = "";
+//     participant.sort();
+//     completion.sort();
+//     for (let i = 0; i < participant.length; i += 1) {
+//       if (participant[i] !== completion[i]) return answer = participant[i];
+//     }
+//   }
+
+
+//   const solution = (p, c) => {
+//     p.sort()
+//     c.sort()
+//     while (p.length) {
+//         let pp = p.pop()
+//         if (pp !== c.pop()) return pp
+//     }
+// }
+
+
+
+// 이 코드는 주어진 completion 배열을 기준으로 participant 배열에서 동명이인을 포함한 완주자들을 삭제한 다음,
+// 남은 참가자를 join() 메서드를 이용하여 문자열로 변환하여 반환하는 방식입니다.
+
+// 먼저, completion 배열을 순회하면서 indexOf() 메서드를 이용하여 c 요소가 participant 배열에서 몇 번째 인덱스에 위치하는지 찾습니다.
+// 그리고 splice() 메서드를 이용하여 해당 인덱스의 요소를 제거합니다.
+// 이 방법은 completion 배열에서 동명이인을 제거하지 않는다는 단점이 있습니다. 따라서 이후에 코드에서 동명이인을 제거해주어야 합니다.
+
+// 그리고 마지막으로 participant 배열을 join() 메서드를 이용하여 문자열로 변환한 후, 반환합니다.
+// 이 방법은 participant 배열이 하나의 요소만 가지고 있을 경우에는 join() 메서드로 문자열을 생성할 수 없으므로 주의해야 합니다.
+
+// 추가로, 이 코드에서 answer 변수를 선언하지 않고 participant.join() 메서드를 바로 반환해도 무방합니다.
+
+// function solution(participant, completion) {
+//     for (const c of completion) {
+//       const index = participant.indexOf(c);
+//       console.log(c);
+//       participant.splice(index, 1);
+//     }
+    
+//     const answer = participant.sort().join(','); // answer = participant[0];
+//     return answer;
+//   }
+
+
+// example code 3.
+
+// 세 번째 접근방식은 다른 사람의 풀이에서 가장 인상 깊었던 코드.
+
+// 언더스코어 라이브러리를 이용한 방식인데 _, $ 대신에 participant, completion으로 변경하니까 그나마 익숙한 모습의 코드가 되었다.
+
+// 정확성은 물론이고 효율성 테스트까지 위의 속도의 절반밖에 되지 않는다니....
+
+// 문제 카테고리 자체가 '해시 (key-value 쌍으로 데이터를 빠르게 찾아보세요)' 였으니 이게 가장 적합한 답변이 맞는 것 같다
+
+// 설명은 문제 풀이 완료 후 '다른 사람의 풀이'를 보면 댓글에 갓 개발자님들께서 자세하게 설명해주고 계십니다 :)
+
+// var solution=(_,$)=>_.find(_=>!$[_]--,$.map(_=>$[_]=($[_]|0)+1))
+// var solution=(participant,completion)=>participant.find(name=>!completion[name]--,completion.map(name=>completion[name]=(completion[name]|0)+1))
+
+console.log(solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"]))
