@@ -20,18 +20,18 @@ function solution(n) {
 
     while (n !== 1 ) {
         if (n % 2 === 0) {
-            // n이 짝수인 경우
+            // n짝수인 경우
             n = n / 2;
         } else {
-            // n이 홀수인 경우
+            // n홀수인 경우
             n = n * 3 + 1;
         }
-         // 결과를 배열에 추가
+         // 배열에 추가
         answer.push(n);
     }
 
     answer =  (answer.length > 500 || answer.length < 1 ) ? -1 : answer.length - 1;
-    // 결과 배열 반환
+    // 배열 반환
     return answer; 
 }
 

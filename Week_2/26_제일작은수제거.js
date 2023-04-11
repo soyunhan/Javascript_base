@@ -12,7 +12,6 @@
 
 function solution(arr) {
     let answer = [];
-     
 	if (arr.length <= 1){
 		return [-1]
 	} else {

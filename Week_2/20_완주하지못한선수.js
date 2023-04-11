@@ -27,6 +27,14 @@
 // }
 
 
+// let participant = ["홍길동", "김철수", "박영희", "홍길동"];
+// let completion = ["김철수", "박영희", "홍길동"];
+// 이 경우 participant 배열을 정렬하면 ["김철수", "박영희", "홍길동", "홍길동"]이 됩니다.
+// 그리고 participant 배열과 completion 배열을 순서대로 비교하면서, 중복된 이름이 있어도 순서대로 비교하게 됩니다.
+// 즉, "김철수"와 "김철수"를 비교하고, "박영희"와 "박영희"를 비교하고, "홍길동"과 "홍길동"을 비교하면서,
+// 마지막으로 "홍길동"과 비교가 되는데 이 때 첫 번째 "홍길동"은 completion 배열에서 삭제되었으므로,
+// 두 번째 "홍길동"이 완주하지 못한 참가자가 됩니다.
+
 function solution(participant, completion) {
     var answer = "";
     participant.sort();
