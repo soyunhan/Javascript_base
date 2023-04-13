@@ -51,7 +51,8 @@ function addArray(data) {
     // 우선, 정규식 /d+번: (\d+(,\d+)*)/g을 사용하여 각각의 옷 종류 목록을 추출합니다.
     // 이 정규식은 숫자+번: 숫자+쉼표+숫자+0개 이상 반복 패턴에 매치됩니다.
     const regex = /\d+번: (\d+(,\d+)*)/g;
-    // match() 함수를 사용하여 정규식에 매치되는 모든 문자열을 배열로 만듭니다. 
+    // match 객체는 정규식 패턴에 대한 문자열 검색 결과를 나타냅니다. 
+    // match 객체는 검색된 문자열, 시작 위치, 끝 위치 등의 정보를 제공
     const clothList = data.match(regex)
         // flatMap() 함수를 사용하여 각각의 옷 종류 목록에서 쉼표로 분리된 숫자들을 추출
         .flatMap((str) => str.match(/\d+/g).slice(1))
@@ -82,3 +83,4 @@ console.log(result)
 // const result = str.match(regex);
 
 // console.log(result); // ["is", "is"]
+

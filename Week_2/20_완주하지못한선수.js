@@ -35,14 +35,14 @@
 // 마지막으로 "홍길동"과 비교가 되는데 이 때 첫 번째 "홍길동"은 completion 배열에서 삭제되었으므로,
 // 두 번째 "홍길동"이 완주하지 못한 참가자가 됩니다.
 
-function solution(participant, completion) {
-    var answer = "";
-    participant.sort();
-    completion.sort();
-    for (let i = 0; i < participant.length; i += 1) {
-      if (participant[i] !== completion[i]) return answer = participant[i];
-    }
-  }
+// function solution(participant, completion) {
+//     var answer = "";
+//     participant.sort();
+//     completion.sort();
+//     for (let i = 0; i < participant.length; i += 1) {
+//       if (participant[i] !== completion[i]) return answer = participant[i];
+//     }
+//   }
 
 
 //   const solution = (p, c) => {

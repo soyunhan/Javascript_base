@@ -16,7 +16,7 @@
 
 
 function solution(n) {
-    let answer = [n]; // 결과를 저장할 배열
+    let answer = []; // 결과를 저장할 배열
 
     while (n !== 1 ) {
         if (n % 2 === 0) {
@@ -34,6 +34,17 @@ function solution(n) {
     // 배열 반환
     return answer; 
 }
+
+// function solution(n) {
+//     const answer = []; // 결과를 저장할 배열
+
+//     while (n !== 1) {
+//         n = (n % 2 === 0) ? n / 2 : n * 3 + 1; // n짝수면 2로 나누고, 아니면 3을 곱하고 1을 더함
+//         answer.push(n); // 배열에 추가
+//     }
+
+//     return (answer.length > 500 || answer.length < 1) ? -1 : answer.length;
+// }
 
 
 console.log(solution(6)); // [4, 3, 2]
