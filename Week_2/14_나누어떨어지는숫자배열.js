@@ -17,6 +17,8 @@ function solution(arr, divisor) {
         //오름차순
         answer.sort((a, b) => a - b)
     }
+    //filter
+    // let answer = arr.filter(i => i % diviser === 0).sort((a, b) => a - b)
     //없을경우
     if (answer.length === 0) return [-1]
     return answer
